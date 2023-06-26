@@ -25,8 +25,10 @@ app.use(cookieParser());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', require('./routes/home'));
+app.use(require('./routes/home'));
+app.use(require('./routes/auth/signin'));
+app.use(require('./routes/auth/signup'));
 
-const PORT = process.env.PORT || 5005;
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => console.log(`🏎  DRONE Server up and running at ${PORT}`));
