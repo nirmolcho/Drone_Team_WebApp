@@ -2,47 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Sign Up</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link href="css/styles.css" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Sign Up</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
-    
-    <%- include('partials/homeHeader') %>
+
+  <%- include('partials/homeHeader') %>
     <!-- Masthead-->
     <header class="masthead">
-        <div class="container">
-            <div class="sign-panel">
-                <form class="sign-form needs-validation" method="POST" action="/signup" novalidate>
-                    <div class="mb-3">
-                        <h5>Create your account</h5>
-                    </div>
-                    <div class="mb-3">
-                      <label for="email" class="form-label form-floating">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" required />
-                    </div>
-                    <div class="mb-3">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="cassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="cassword" name="cpassword" required />
-                      </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+      <div class="container">
+        <div class="sign-panel">
+          <form class="sign-form needs-validation" id="signupForm" method="POST" action="/signup" novalidate>
+            <div class="mb-3">
+              <h5>Create your account</h5>
             </div>
+            <% if (status=="success" ) { %>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>
+                      <%= message %>
+                  </strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <% } else if (status=="error" ) { %>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>
+                    <%= message %>
+                </strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            <% } %>
+            <div id="cpassError" class="my-2"></div>
+            <div class="mb-3">
+              <label for="firstName" class="form-label form-floating">First Name</label>
+              <input type="text" class="form-control" id="firstName" name="firstName" required />
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label form-floating">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label form-floating">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" required />
+            </div>
+            <div class="mb-3">
+              <label for="cpassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="cpassword" name="cpassword" required />
+              
+            </div>
+            <button type="button" id="signup_btn" class="btn btn-primary">Submit</button>
+          </form>
         </div>
+      </div>
 
-        <%- include('partials/footer') %>
+      <%- include('partials/footer') %>
     </header>
 
 
@@ -52,6 +77,29 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="js/form-validation.js"></script>
+    <script>
+      $("#signup_btn").on("click", function (e) {
+        var form = $("#signupForm");
+        if (form[0].checkValidity() === false) {
+          e.preventDefault();
+          e.stopPropagation();
+          form[0].classList.add("was-validated");
+          return;
+        }
+        const password = $('#password').val();
+        const cpassword = $('#cpassword').val();
+        if (password !== cpassword) {
+          $("#cpassError").html(
+            '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+              '<strong>Confirm password should match with password.</strong>' +
+              '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+            '</div>'
+          )
+        } else {
+          form.submit();
+        }
+      })
+    </script>
 </body>
 
 </html>
