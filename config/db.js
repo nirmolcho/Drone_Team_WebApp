@@ -1,3 +1,6 @@
+// sean - update connection and crash problem
+
+
 const mongoose= require("mongoose");
 
 const connectDB = async () =>
