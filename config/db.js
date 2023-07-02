@@ -1,18 +1,16 @@
 // sean - update connection and crash problem
 
-
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 
 const connectDB = async () =>
 {
   mongoose.set('strictQuery', false);
-  try
-  {
+  try {
     const conn = await mongoose.connect(process.env.MONGODB_URI,
         {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-    })
+        })
     console.log(`💾 Connected to DB: ${conn.connection.host}`.cyan.underline)
   }
   catch (error)
@@ -22,7 +20,4 @@ const connectDB = async () =>
   }
 }
 
-module.exports =
-    {
-  connectDB
-    };
+module.exports = {connectDB};
