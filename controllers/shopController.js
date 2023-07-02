@@ -5,9 +5,29 @@ const shopView = (req, res) => {
     });
 }
 
-const shopItems = (req, res) => {
-    res.render('shopItems', {
-    });
+const shopItems = async (req, res) => {
+    try {
+        const items = await Product.find();
+        return res.render('shopItems', {
+            items: items,
+            status: ''
+        });
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+const shopItemDetail = async (req, res) => {
+    try {
+        const item = await Product.findById(req.params.itemId);
+        res.render('shopItemDetail', {
+            item: item,
+            status: 'success'
+        });
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+
 }
 
 const adminShop = async (req, res) => {
@@ -90,4 +110,5 @@ module.exports = {
     adminShopCreate,
     adminShopUpdateView,
     adminShopUpdate,
+    shopItemDetail,
 }
