@@ -99,7 +99,7 @@
                         localStorage.setItem('userData', JSON.stringify(result.response.userData));
                         document.cookie = `token=${result.response.accessToken}`;
                         if (result.response.userData.role == "admin") {
-                            location.href = "/";
+                            location.href = "/adminHome";
                         } else if (result.response.userData.role == "user") {
                             location.href = "/userHome";
                         }
