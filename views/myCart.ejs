@@ -61,7 +61,7 @@
                             <a href="javascript:void(0);" class="cart_quantity_down" href=""> - </a>
                         </div>
                     </div>
-                    <div style="width: 15%;">
+                    <div style="width: 15%;" class="total-price">
                         <%= parseFloat(myCart.quantity) * parseFloat(myCart.product?.price) %>
                     </div>
                     <div style="width: 10%;">
@@ -99,23 +99,46 @@
     <script src="/js/notify.min.js"></script>
     <script>
         const myCartData = `<%- JSON.stringify(myCarts) %>`;
-        
+        $(document).on('click', '.cart_quantity_up', function(e) {
+            var input = this.parentNode.querySelector('.cart_quantity_input');
+            var totalPricetag = this.parentNode.parentNode.parentNode.querySelector('.total-price');
+            
+            var currentValue = parseInt(input.value);
+            var price = parseInt($(totalPricetag).text().trim()) / currentValue;
+
+            if (currentValue >= 1) {
+                input.value = currentValue + 1;
+                $(totalPricetag).text(price * input.value);
+            }
+        });
+        $(document).on('click', '.cart_quantity_down', function(e) {
+            var input = this.parentNode.querySelector('.cart_quantity_input');
+            var totalPricetag = this.parentNode.parentNode.parentNode.querySelector('.total-price');
+            var currentValue = parseInt(input.value);
+            var price = parseInt($(totalPricetag).text().trim()) / currentValue;
+            if (currentValue > 1) {
+                input.value = currentValue - 1;
+                $(totalPricetag).text(price * input.value);
+            }
+        });
         $("#checkout_btn").on('click', function(e) {
+            var checkedD = { checkedIds: [], quantity: [] };
             var checkedIds = [];
             $('input[type="checkbox"]:checked').each(function() {
                 var id = $(this).attr('id');
-                checkedIds.push(id); 
+                var quantityInput = this.parentNode.parentNode.parentNode.querySelector('.cart_quantity_input');
+                checkedD.checkedIds.push(id); 
+                checkedD.quantity.push($(quantityInput).val().trim()); 
             });
-            console.log(checkedIds)
             const checkoutData = [];
-            if (checkedIds.length > 0) {
-                for (const checkedId of checkedIds) {
+            if (checkedD.checkedIds.length > 0) {
+                for (var i = 0; i < checkedD.checkedIds.length; i++) {
                     for (const myC of JSON.parse(myCartData)) {
-                        if (myC._id === checkedId) {
+                        if (myC._id === checkedD.checkedIds[i]) {
                             let temp = {
                                 product: myC.product._id,
-                                quantity: myC.quantity,
-                                totalPrice: parseFloat(myC.quantity) * parseFloat(myC.product.price),
+                                quantity: parseFloat(checkedD.quantity[i]),
+                                totalPrice: parseFloat(checkedD.quantity[i]) * parseFloat(myC.product.price),
                                 cart: myC._id,
                                 user: myC.user._id
                             }
@@ -125,7 +148,7 @@
                 }
 
                 let postCheckoutData = {
-                    cartIds: checkedIds,
+                    cartIds: checkedD.checkedIds,
                     checkoutData: checkoutData
                 }
                 $.ajax({
