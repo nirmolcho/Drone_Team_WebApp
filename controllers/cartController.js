@@ -1,5 +1,7 @@
 const { Cart } = require("../models/Cart");
 const { ObjectId } = require('mongodb');
+const { Order } = require("../models/Order");
+const { Product } = require("../models/Product");
 
 const myCartView = async (req, res) => {
     const myCarts = await Cart.find({ user: new ObjectId(req.user._id), status: 'active' })
@@ -31,6 +33,10 @@ const myCartCreate = async (req, res) => {
             user: userId,
             quantity: quantity
         });
+        let productData = await Product.findById(new ObjectId(product));
+        let changedStock = parseFloat(productData.stock) - parseFloat(quantity);
+        if (changedStock < 0) return res.send({ status: "error", message: "You can't cart the quantity, there is not enough." });
+        await Product.findOneAndUpdate({ _id: new ObjectId(product) }, { stock: changedStock });
         return res.send({ status: "success", message: "The Cart data created successfully!" });
     } catch (error) {
         return res.send({ status: "error", message: error.message });
@@ -40,8 +46,20 @@ const myCartCreate = async (req, res) => {
 const myCartDelete = async (req, res) => {
     const { cartId } = req.body;
     try {
-        await Cart.findOneAndUpdate({ _id: new ObjectId(cartId) }, { status: 'delete' }, { new: true });
+        await Cart.findOneAndUpdate({ _id: new ObjectId(cartId) }, { status: 'deleted' }, { new: true });
         return res.send({ status: "success", message: "The Cart data deleted successfully!" });
+    } catch (error) {
+        return res.send({ status: "error", message: error.message });
+    }
+}
+
+const myCartCheckout = async (req, res) => {
+    const postCheckoutData = JSON.parse(req.body.postCheckoutData);
+    let cartIds = postCheckoutData.cartIds.map(cartId => new ObjectId(cartId));
+    try {
+        await Cart.updateMany({ _id: { $in: cartIds } }, { $set: { status: "deleted" } }, { new: true });
+        await Order.insertMany(postCheckoutData.checkoutData);
+        return res.send({ status: "success", message: "Checkout successfully!" });
     } catch (error) {
         return res.send({ status: "error", message: error.message });
     }
@@ -51,4 +69,5 @@ module.exports = {
     myCartView,
     myCartCreate,
     myCartDelete,
+    myCartCheckout,
 }
