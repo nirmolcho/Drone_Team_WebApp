@@ -47,23 +47,11 @@
                                     alt="..." />
                             </div>
                             <div class="col-md-6">
-                                <p class="text-start">Name: </p>
-                                <p class="text-start">Price: </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="drone-item mt-3">
-                        <div class="mb-4">
-                            <span>Best seller accessory</span>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img class="img-fluid" style="border-radius: 10px;" src="assets/img/portfolio/8.jpg"
-                                    alt="..." />
-                            </div>
-                            <div class="col-md-6">
-                                <p class="text-start">Name: </p>
-                                <p class="text-start">Price: </p>
+                                <% if (user.orders.length > 0) { %>
+                                    <p class="text-start">You have the items of <%= user.orders.length %></p>
+                                <% } else { %>
+                                    <p class="text-start">You don't have the items</p>
+                                <% }  %>
                             </div>
                         </div>
                     </div>
@@ -79,23 +67,30 @@
                                     alt="..." />
                             </div>
                             <div class="col-md-6">
-                                <p class="text-start">Name: </p>
-                                <p class="text-start">Price: </p>
+                                <% if (user.orders.length > 0) { %>
+                                    <p class="text-start">Name: <%= user.orders[0].products[0].name %></p>
+                                    <p class="text-start">Price: <%= user.orders[0].products[0].price %></p>
+                                <% } else { %>
+                                    <p class="text-start"></p>
+                                <% }  %>
+                                
                             </div>
                         </div>
                     </div>
                     <div class="drone-item mt-3">
                         <div class="mb-4">
-                            <span>Light flight</span>
+                            <span>Last Flight</span>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <img class="img-fluid" style="border-radius: 10px;" src="assets/img/portfolio/8.jpg"
-                                    alt="..." />
-                            </div>
-                            <div class="col-md-6">
-                                <p class="text-start">Name: </p>
-                                <p class="text-start">Price: </p>
+                            <div class="col-md-12">
+                                <% if (user.lastFlight.length > 0) { %>
+                                    <p class="text-start">Name: <%= user.lastFlight[0].name %></p>
+                                    <p class="text-start">Date: <%= user.lastFlight[0].date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) %></p>
+                                    <p class="text-start">Duration: <%= user.lastFlight[0].duration %></p>
+                                    <p class="text-start">Location: <%= user.lastFlight[0].location %></p>
+                                <% } else { %>
+                                    <p class="text-start"></p>
+                                <% }  %>
                             </div>
                         </div>
                     </div>
