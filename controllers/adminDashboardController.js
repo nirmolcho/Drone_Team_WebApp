@@ -1,5 +1,5 @@
-const { Order } = require("../../proj_v8/models/Order");
-const { Product } = require("../../proj_v8/models/Product");
+const { Order } = require("../models/Order");
+const { Product } = require("../models/Product");
 
 const adminDashboard = async (req, res) => {
     try {

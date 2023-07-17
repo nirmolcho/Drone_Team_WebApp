@@ -1,5 +1,5 @@
 const { ObjectId } = require("mongodb");
-const { User } = require("../../proj_v8/models/User");
+const { User } = require("../models/User");
 
 const userDashboard = async (req, res) => {
     try {
@@ -62,7 +62,7 @@ const userDashboard = async (req, res) => {
                 }
             ]
         );
-        console.log(JSON.stringify(user))
+
         res.render('userDashboard', {
             status: '',
             user: user[0]
