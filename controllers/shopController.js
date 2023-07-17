@@ -1,4 +1,3 @@
-
 const shopView = (req, res) => {
     res.render('shop', {
     });

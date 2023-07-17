@@ -1,4 +1,3 @@
-
 const adminHome = (req, res) => {
     res.render('adminHome', {
         status: ''

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Admin Shop | Drone</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+
+    <%- include('partials/adminHeader') %>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="drone-tail"></div>
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <div class="card mb-4" style="background-color: #989ca173;">
+                            <div class="card-header py-3">
+                                <h5 class="mb-0 text-start text-dark">Update Product</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="shopUpdateForm" class="needs-validation" method="POST" novalidate>
+                                    <div id="eMsg"></div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="productImg" class="form-label d-block text-start text-dark">Product Image</label>
+                                                        <input type="file" id="productImg" class="form-control" name="productImg" value="" hidden accept=".png, .jpg, .jpeg" />
+                                                        <div class="d-flex">
+                                                            <img id="product-preview" src="<%= product.productImg %>" alt="Preview" width="200px" height="200px" />
+                                                        </div>
+                                                        <input type="hidden" id="productImgLink" class="form-control" name="productImgLink" value=""  />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="mb-3">
+                                                        <label for="ProductName" class="form-label d-block text-start text-dark">Product Name</label>
+                                                        <input type="text" id="ProductName" name="name" style="background-color: #989ca173;" class="form-control" value="<%= product.name %>" required />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="ProductDetail" class="form-label d-block text-start text-dark">Product Detail</label>
+                                                        <textarea type="text" id="ProductDetail" name="detail" style="background-color: #989ca173;" class="form-control" required><%= product.detail %></textarea>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="ProductStock" class="form-label d-block text-start text-dark">Product Stock</label>
+                                                        <input type="number" id="ProductStock" name="stock" style="background-color: #989ca173;" class="form-control" value="<%= product.stock %>" required />
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="ProductPrice" class="form-label d-block text-start text-dark">Product Price</label>
+                                                        <input type="text" id="ProductPrice" name="price" style="background-color: #989ca173;" class="form-control" value="<%= product.price %>" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <button type="button" id="adminShop_btn" class="btn btn-primary" style="background-color: #d9aa00;">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('partials/footer') %>
+        </header>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="../js/scripts.js"></script>
+        <script src="../js/form-validation.js"></script>
+        <script>
+            $("#product-preview").on('click', function(e) {
+                $("#productImg").trigger('click');
+            });
+            $('#productImg').change(function () {
+                const file = $(this)[0].files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                $('#product-preview')
+                    .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(file);
+
+                let formData = new FormData();
+                const $this = $(this);
+                formData.append("file", this.files[0]);
+                $.ajax({
+                    url: '/file/upload',
+                    type: 'POST',
+                    data: formData,
+                    success: function (data) {
+                        console.log(data)
+                        $("#productImgLink").val(data);
+                    },
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
+            });
+
+            $(document).on('click', '#adminShop_btn', function(e) {
+                var shopUpdateForm = $("#shopUpdateForm");
+                if (shopUpdateForm[0].checkValidity() === false) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    shopUpdateForm[0].classList.add("was-validated");
+                    return;
+                }
+                const shopData = {
+                    name: $("#ProductName").val(),
+                    detail: $("#ProductDetail").val(),
+                    stock: $("#ProductStock").val(),
+                    price: $("#ProductPrice").val(),
+                    productImg: $("#productImgLink").val(),
+                }
+                $.ajax({
+                    url: '/adminShop/<%= product._id %>',
+                    type: 'POST',
+                    data: shopData,
+                    success: function (result) {
+                        if (result.status == "success") {
+                            $("#eMsg").html(
+                                '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
+                                    '<strong>' + result.message + '</strong>' +
+                                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                                '</div>'
+                            );
+                        } else {
+                            $("#eMsg").html(
+                                '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                                    '<strong>' + result.message + '</strong>' +
+                                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                                '</div>'
+                            );
+                        }
+                    },
+                });
+
+            });
+        </script>
+</body>
+
+</html>

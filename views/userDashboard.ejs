@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>User Dashboard | Drone</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    
+    <%- include('partials/userHeader') %>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="drone-tail">
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="drone-item" style="min-height: 450px;">
+                        <div class="mb-3">
+                            <img src="/assets/img/person.png" style="width:120px;height:120px;">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-start">Name: <%= user.firstName %> <%= user.lastName %></p>
+                                <p class="text-start">Email: <%= user.email %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="drone-item mb-3">
+                        <div class="mb-4">
+                            <span>Your Items</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="img-fluid" style="border-radius: 10px;" src="/assets/img/portfolio/8.jpg"
+                                    alt="..." />
+                            </div>
+                            <div class="col-md-6">
+                                <% if (user.orders.length > 0) { %>
+                                    <p class="text-start">You have the items of <%= user.orders.length %></p>
+                                <% } else { %>
+                                    <p class="text-start">You don't have the items</p>
+                                <% }  %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="drone-item mb-3">
+                        <div class="mb-4">
+                            <span>Last purchase</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="img-fluid" style="border-radius: 10px;" src="/assets/img/portfolio/8.jpg"
+                                    alt="..." />
+                            </div>
+                            <div class="col-md-6">
+                                <% if (user.orders.length > 0) { %>
+                                    <p class="text-start">Name: <%= user.orders[0].products[0].name %></p>
+                                    <p class="text-start">Price: <%= user.orders[0].products[0].price %></p>
+                                <% } else { %>
+                                    <p class="text-start"></p>
+                                <% }  %>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drone-item mt-3">
+                        <div class="mb-4">
+                            <span>Last Flight</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <% if (user.lastFlight.length > 0) { %>
+                                    <p class="text-start">Name: <%= user.lastFlight[0].name %></p>
+                                    <p class="text-start">Date: <%= user.lastFlight[0].date.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) %></p>
+                                    <p class="text-start">Duration: <%= user.lastFlight[0].duration %></p>
+                                    <p class="text-start">Location: <%= user.lastFlight[0].location %></p>
+                                <% } else { %>
+                                    <p class="text-start"></p>
+                                <% }  %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('partials/footer') %>
+    </header>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
