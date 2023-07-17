@@ -1,3 +1,4 @@
+
 const { User } = require("../../models/User");
 const bcrypt = require('bcrypt');
 const { registerValidation } = require("../../utils/validation");

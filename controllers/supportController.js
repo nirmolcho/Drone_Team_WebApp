@@ -1,3 +1,4 @@
+
 const supportView = (req, res) => {
     res.render('support', {
     });
