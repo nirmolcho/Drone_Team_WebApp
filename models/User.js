@@ -1,4 +1,8 @@
+user_controllers
+const mongoose = require("mongoose");
+
 const mongoose = require("mongoose"); 
+ main
 const bcrypt = require("bcryptjs");
 const userSchema = mongoose.Schema(
     {
