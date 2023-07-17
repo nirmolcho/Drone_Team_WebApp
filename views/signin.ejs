@@ -97,11 +97,11 @@
                     if (result.status == "success") {
                         localStorage.setItem('accessToken', result.response.accessToken);
                         localStorage.setItem('userData', JSON.stringify(result.response.userData));
-                        document.cookie = `token=${result.response.accessToken}`;
+                        document.cookie = `accessToken=${result.response.accessToken}`;
                         if (result.response.userData.role == "admin") {
-                            location.href = "/adminHome";
+                            location.href = "/adminDashboard";
                         } else if (result.response.userData.role == "user") {
-                            location.href = "/userHome";
+                            location.href = "/userDashboard";
                         }
                     } else {
                         $("#errorMsg").html(
