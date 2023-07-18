@@ -10840,7 +10840,11 @@ html {
 }
 
 body {
-  position: relative;
+  position: initial;
+}
+
+.applyBtn {
+  background-color: #d9aa00;
 }
 
 p {
