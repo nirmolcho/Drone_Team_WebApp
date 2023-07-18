@@ -36,9 +36,9 @@
                                                 <div class="col-md-12">
                                                     <div class="mb-3">
                                                         <label for="productImg" class="form-label d-block text-start text-dark">Product Image</label>
-                                                        <input type="file" id="productImg" class="form-control" name="productImg" value="" hidden />
+                                                        <input type="file" id="productImg" class="form-control" name="productImg" value="" accept=".png, .jpg, .jpeg" hidden />
                                                         <div class="d-flex">
-                                                            <img id="product-preview" src="../assets/img/portfolio/7.jpg" alt="Preview" width="200px" height="200px" />
+                                                            <img id="product-preview" src="../assets/img/portfolio/7.jpg" alt="Preview" width="200px" height="200px" accept="image/*" />
                                                         </div>
                                                         <input type="hidden" id="productImgLink" class="form-control" name="productImgLink" value=""  />
                                                     </div>
@@ -113,7 +113,6 @@
                     type: 'POST',
                     data: formData,
                     success: function (data) {
-                        console.log(data)
                         $("#productImgLink").val(data);
                     },
                     cache: false,

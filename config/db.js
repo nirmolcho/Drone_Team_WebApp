@@ -1,7 +1,4 @@
-// sean - update connection and crash problem
-
-
-const mongoose= require("mongoose");
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
   mongoose.set('strictQuery', false);
@@ -19,4 +16,4 @@ const connectDB = async () => {
 
 module.exports = {
   connectDB
-}
+};

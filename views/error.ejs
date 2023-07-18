@@ -17,8 +17,25 @@
             Error!
         </h1>
         <p class="mb-5  text-muted text-18"><%= message %></p>
-        <a class="btn btn-lg btn-primary btn-rounded" href="/">Go back to home</a>
+        <a onclick="redirect()" class="btn btn-lg btn-primary btn-rounded" href="javascript:void(0);">Go back to home</a>
     </div>
+
+    <script>
+        function redirect() {
+            let userData;
+            if (localStorage.getItem('userData')) {
+                userData = JSON.parse(localStorage.getItem('userData'));
+                if (userData.role == 'admin') {
+                    location.href = '/adminDashboard';
+                } else {
+                    window.location.href = '/userDashboard';
+                }
+            } else {
+                window.location.href = '/'
+            }
+
+        }
+    </script>
 </body>
 
 </html>
