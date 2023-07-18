@@ -19,7 +19,7 @@ const userDashboard = async (req, res) => {
                                     localField: 'product',
                                     foreignField: '_id',
                                     as: 'products',
-                                },
+                                }, 
                             },
                             {
                                 $project: {
@@ -29,14 +29,14 @@ const userDashboard = async (req, res) => {
                                     cart: 1,
                                     user: 1,
                                     products:1,
-                                },
+                                }, 
                             }
                         ],
                         as: 'orders',
                     },
                 },
                 {
-                    $sort: { 'orders.createdAt': -1 }
+                    $sort: { 'orders.createdAt': -1 } 
                 },
                 {
                     $lookup: {
@@ -44,11 +44,11 @@ const userDashboard = async (req, res) => {
                         localField: '_id',
                         foreignField: 'user',
                         pipeline: [
-                            { $match: { status: { $ne: 'deleted'} } },
+                            { $match: { status: { $ne: 'deleted'} } }, 
                             { $group: { _id: null, count: { $sum: 1 } } },
                         ],
                         as: 'carts',
-                    },
+                    },     
                 },
                 {
                     $lookup: {
@@ -56,12 +56,12 @@ const userDashboard = async (req, res) => {
                         localField: '_id',
                         foreignField: 'user',
                         pipeline: [
-                            { $match: { user: new ObjectId(req.user._id) } },
+                            { $match: { user: new ObjectId(req.user._id) } }, 
                             { $sort: { 'flights.createdAt': -1 }  },
                             { $limit: 1 }
                         ],
                         as: 'lastFlight',
-                    },
+                    },     
                 },
                 {
                     $project: {
@@ -73,7 +73,7 @@ const userDashboard = async (req, res) => {
                         orders: 1,
                         carts: 1,
                         lastFlight: 1
-                    },
+                    }, 
                 }
             ]
         );
@@ -85,7 +85,7 @@ const userDashboard = async (req, res) => {
     } catch (error) {
         res.status(500).send(error.message);
     }
-
+    
 }
 
 module.exports = {
