@@ -4,6 +4,7 @@ const { User } = require('../models/User');
 module.exports = (usergroupsAllowed) => async function auth(req, res, next) {
     const authCookie = req.headers.cookie;
     const list = {};
+
     if (!authCookie) {
         return res.redirect('/signin');
     } else {
@@ -15,8 +16,9 @@ module.exports = (usergroupsAllowed) => async function auth(req, res, next) {
             if (!value) return;
             list[name] = decodeURIComponent(value);
         });
-        if (list['token']) {
-            const token = list['token'];
+
+        if (list['accessToken']) {
+            const token = list['accessToken'];
             try {
                 const verified = jwt.verify(token, process.env.AUTH_TOKEN_SECRET);
                 req.user = verified;
