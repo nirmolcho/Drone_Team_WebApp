@@ -1,3 +1,4 @@
+//v12
 const { Product } = require("../models/Product");
 
 const shopView = (req, res) => {
@@ -6,10 +7,17 @@ const shopView = (req, res) => {
 }
 
 const shopItems = async (req, res) => {
+    const currentPage = parseInt(req.query.page) || 1;
+    const itemsPerPage = 6;
     try {
-        const items = await Product.find();
+        const totalItems = await Product.countDocuments();
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const items = await Product.find().skip(startIndex).limit(itemsPerPage);
         return res.render('shopItems', {
             items: items,
+            currentPage: currentPage,
+            totalPages: totalPages,
             status: ''
         });
     } catch (error) {
@@ -27,19 +35,27 @@ const shopItemDetail = async (req, res) => {
     } catch (error) {
         res.status(500).send(error.message);
     }
-
+    
 }
 
 const adminShop = async (req, res) => {
+    const currentPage = parseInt(req.query.page) || 1;
+    const itemsPerPage = 6;
     try {
-        const products = await Product.find();
+        const totalItems = await Product.countDocuments();
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const products = await Product.find().skip(startIndex).limit(itemsPerPage);
         return res.render('adminShop', {
-            products: products
+            products: products,
+            currentPage: currentPage,
+            totalPages: totalPages,
+            status: ''
         });
     } catch (error) {
         return res.status(500).send(error.message);
     }
-
+    
 }
 
 const adminShopCreateView = (req, res) => {
@@ -67,7 +83,6 @@ const adminShopCreate = async (req, res) => {
 
 const adminShopUpdateView = async (req, res) => {
     const product = await Product.findById(req.params.productId);
-    console.log(product)
     return res.render('adminShopUpdate', {
         status: '',
         product: product
