@@ -21,10 +21,10 @@ mongoose.connect(
         useNewUrlParser: true,
     }
 )
-    .then(() => console.log('💾 Connected to DB'))
-    .catch((err) => {
-        console.error(err);
-    });
+.then(() => console.log('💾 Connected to DB'))
+.catch((err) => {
+    console.error(err);
+});
 
 const conn = mongoose.connection;
 conn.once("open", function () {
