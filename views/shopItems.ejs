@@ -15,53 +15,142 @@
 </head>
 
 <body id="page-top">
-
-<%- include('partials/userHeader') %>
-<!-- Masthead-->
-<header class="masthead">
-    <div class="container">
-        <div class="row">
-            <% items.forEach(function(item) { %>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <a href="/shop/items/<%= item._id %>" style="font-size: 26px;text-decoration: none; color: #ffffff;">
-                        <div class="drone-item">
-                            <div class="row">
-                                <div class="col-md-6 d-flex align-items-center">
-                                    <img class="img-fluid" style="border-radius: 10px;" src="<%= item.productImg %>"
-                                         alt="..." />
-                                </div>
-                                <div class="col-md-6">
-                                    <p class="text-start" style="font-size:large;color:whitesmoke;font-family:'Arial Black'"><%= item.name %></p>
-                                    <p class="text-start" style="font-size:large;color:whitesmoke;font-family:'Arial Black'"><%= item.detail %></p>
-                                    <p class="text-start" style="font-size:large;color:whitesmoke;font-family:'Arial Black'">Price: <%= item.price %> $</p>
-                                </div>
+    
+    <%- include('partials/homeHeader') %>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="drone-tail-component">
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/shop/items" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
                             </div>
                         </div>
-
                     </a>
                 </div>
-            <% }) %>
-            <div class="testet">
-                <% if (currentPage > 1) { %>
-                    <a class="btn btn-primary btn-sm" href="?page=<%= currentPage - 1 %>">Previous</a>
-                <% } %>
-
-                <% if (currentPage < totalPages) { %>
-                    <a class="btn btn-primary btn-sm" href="?page=<%= currentPage + 1 %>">Next</a>
-                <% } %>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/drone" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/shop/items" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/drone" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/shop/items" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/drone" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/shop/items" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/drone" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/shop/items" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/drone" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/shop/items" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-sm-6 mb-4">
+                    <a href="/drone" style="font-size: 26px;text-decoration: none; color: #ffffff;">
+                        <div class="drone-item-shop-item">
+                            <div class="mb-4">
+                                <span>Item 1</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
             </div>
         </div>
-    </div>
 
-    <%- include('partials/footer') %>
-</header>
+        <%- include('partials/footer') %>
+    </header>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="../js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../js/scripts.js"></script>
 </body>
 
 </html>
