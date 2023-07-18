@@ -1,5 +1,5 @@
 Drones Online Shop
-Introduction
+Introduction:
 Welcome to Drones Online Shop, your go-to web application for the best drones in the world. We not only offer a platform for purchasing the latest and most cutting-edge drones, but also provide a user-friendly map interface to help you understand where it's possible to fly your drone.
 
 Our primary goal is to ensure our customers have the best and most comprehensive drone shopping experience, providing a seamless journey from selection to purchase, and beyond. With a variety of drones on offer, you're guaranteed to find something that suits your needs, whether you're a hobbyist, a professional videographer, or just getting started in the drone world.
