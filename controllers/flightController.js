@@ -1,9 +1,10 @@
+//v12
 const { Flight } = require("../models/Flight");
 const { Order } = require("../models/Order");
 
 const flightView = async (req, res) => {
     const purchases = await Order.find({ user: req.user._id })
-        .populate({ 
+        .populate({
             path: 'product',
             select: {
                 _id: 1, name: 1, detail: 1, stock: 1, price: 1, productImg: 1,

@@ -1,3 +1,4 @@
+//v12
 const axios = require('axios');
 
 const exploreView = async (req, res) => {
@@ -10,7 +11,7 @@ const exploreView = async (req, res) => {
         };
         const response = await axios(ipOptions);
         const myLocation = response.data;
-    
+
         let location = "Rishon Lezion, Israel";
 
         var config = {
@@ -27,7 +28,7 @@ const exploreView = async (req, res) => {
     } catch (error) {
         return res.status(500).send(error.message);
     }
-    
+
 }
 
 module.exports = {

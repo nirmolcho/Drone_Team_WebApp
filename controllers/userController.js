@@ -1,3 +1,4 @@
+//v12
 const { User } = require("../models/User");
 
 const userView = async (req, res) => {
@@ -10,7 +11,7 @@ const userView = async (req, res) => {
     } catch (error) {
         res.status(500).send(error.message);
     }
-    
+
 }
 
 const userDelete = async (req, res) => {

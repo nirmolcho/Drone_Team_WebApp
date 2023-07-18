@@ -1,3 +1,4 @@
+//v12
 const { Cart } = require("../models/Cart");
 const { ObjectId } = require('mongodb');
 const { Order } = require("../models/Order");
@@ -11,7 +12,7 @@ const myCartView = async (req, res) => {
                 _id: 1, firstName: 1, lastName: 1, email: 1, role: 1,
             },
         })
-        .populate({ 
+        .populate({
             path: 'product',
             select: {
                 _id: 1, name: 1, detail: 1, stock: 1, price: 1, productImg: 1,

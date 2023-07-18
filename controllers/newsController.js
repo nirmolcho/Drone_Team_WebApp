@@ -1,3 +1,4 @@
+//v12
 const Twitter = require('twitter')
 
 const newsView = async (req, res) => {
