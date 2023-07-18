@@ -4,7 +4,7 @@ const { User } = require('../models/User');
 module.exports = (usergroupsAllowed) => async function auth(req, res, next) {
     const authCookie = req.headers.cookie;
     const list = {};
-
+    
     if (!authCookie) {
         return res.redirect('/signin');
     } else {

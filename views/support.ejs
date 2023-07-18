@@ -84,14 +84,16 @@
                 data: data,
                 success: function (result) {
                     if (result.status == "success") {
-                        $("#msg").html(
+                        $("#eMsg").html(
                             '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
                             '<strong>' + result.message + '</strong>' +
                             '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
                             '</div>'
                         );
+                        $("#email").val('');
+                        $("#content").val('');
                     } else {
-                        $("#msg").html(
+                        $("#eMsg").html(
                             '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
                             '<strong>' + result.message + '</strong>' +
                             '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +

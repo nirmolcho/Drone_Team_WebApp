@@ -1,5 +1,5 @@
 const { ObjectId } = require("mongodb");
-const { User } = require("../../proj_v8/models/User");
+const { User } = require("../models/User");
 
 const userDashboard = async (req, res) => {
     try {
@@ -50,6 +50,19 @@ const userDashboard = async (req, res) => {
                     },     
                 },
                 {
+                    $lookup: {
+                        from: 'flights',
+                        localField: '_id',
+                        foreignField: 'user',
+                        pipeline: [
+                            { $match: { user: new ObjectId(req.user._id) } }, 
+                            { $sort: { 'flights.createdAt': -1 }  },
+                            { $limit: 1 }
+                        ],
+                        as: 'lastFlight',
+                    },     
+                },
+                {
                     $project: {
                         _id: 1,
                         firstName: 1,
@@ -58,11 +71,12 @@ const userDashboard = async (req, res) => {
                         role: 1,
                         orders: 1,
                         carts: 1,
+                        lastFlight: 1
                     }, 
                 }
             ]
         );
-        console.log(JSON.stringify(user))
+
         res.render('userDashboard', {
             status: '',
             user: user[0]
