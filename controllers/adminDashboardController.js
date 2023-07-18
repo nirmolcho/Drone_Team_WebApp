@@ -1,4 +1,3 @@
-//v12
 const { Order } = require("../models/Order");
 const { Product } = require("../models/Product");
 
@@ -11,18 +10,18 @@ const adminDashboard = async (req, res) => {
                     localField: 'user',
                     foreignField: '_id',
                     as: 'users',
-                },
+                }, 
             },
             {
-                $sort: { createdAt: -1 }
+              $sort: { createdAt: -1 }
             },
             {
-                $group: {
-                    _id: { user: "$users.firstName" },
-                    count: { $sum: 1 },
-                    quantity: { $sum: "$quantity" },
-                    totalPrice: { $sum: "$totalPrice" },
-                }
+              $group: {
+                _id: { user: "$users.firstName" },
+                count: { $sum: 1 },
+                quantity: { $sum: "$quantity" },
+                totalPrice: { $sum: "$totalPrice" },
+              }
             }
         ]);
         let statistics = {};

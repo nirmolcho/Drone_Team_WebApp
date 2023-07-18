@@ -1,4 +1,3 @@
-//v12
 const { Product } = require("../models/Product");
 
 const homeView = async (req, res) => {

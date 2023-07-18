@@ -1,4 +1,3 @@
-//v12
 const { User } = require("../models/User");
 
 const userView = async (req, res) => {

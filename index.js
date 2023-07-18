@@ -1,4 +1,3 @@
-//v12
 var express = require('express');
 const dotenv = require("dotenv");
 var path = require('path');
@@ -12,6 +11,7 @@ const mongoose = require('mongoose');
 const Grid = require("gridfs-stream");
 const upload = require("./routes/upload");
 
+// Connect Database
 // Connect to DB
 mongoose.set('strictQuery', false);
 mongoose.connect(
@@ -58,7 +58,6 @@ app.use(require('./routes/support'));
 app.use(require('./routes/purchase'));
 app.use(require('./routes/flight'));
 app.use(require('./routes/user'));
-app.use(require('./routes/news'));
 app.use("/file", upload);
 
 // media routes

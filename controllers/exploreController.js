@@ -1,4 +1,3 @@
-//v12
 const axios = require('axios');
 
 const exploreView = async (req, res) => {

@@ -1,4 +1,3 @@
-//v12
 const { ObjectId } = require("mongodb");
 const { User } = require("../models/User");
 
