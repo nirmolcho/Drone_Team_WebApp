@@ -1,6 +1,5 @@
-
-const { Order } = require("../../../Downloads/drone-v9/models/Order");
-const { Product } = require("../../../Downloads/drone-v9/models/Product");
+const { Order } = require("../models/Order");
+const { Product } = require("../models/Product");
 
 const adminDashboard = async (req, res) => {
     try {

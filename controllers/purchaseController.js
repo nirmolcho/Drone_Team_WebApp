@@ -1,4 +1,3 @@
-
 const { ObjectId } = require("mongodb");
 const { Order } = require("../models/Order");
 
@@ -10,7 +9,7 @@ const purchaseView = async (req, res) => {
                 select: {
                     _id: 1, name: 1, detail: 1, stock: 1, price: 1, productImg: 1,
                 },
-            }).select('-__v');;
+            }).select('-__v');
 
         res.render('purchase', {
             status: '',
