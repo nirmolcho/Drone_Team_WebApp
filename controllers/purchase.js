@@ -1,3 +1,4 @@
+
 const express = require('express');
 const { purchaseView } = require('../controllers/purchaseController')
 const router = express.Router();
