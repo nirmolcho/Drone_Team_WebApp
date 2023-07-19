@@ -1,19 +1,19 @@
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
+sgMail.setApiKey(process.env.SENDGRID_API);
 
 const supportView = async (req, res) => {
-    
+
     res.render('support', {
-    
+
         status: ''
     });
 }
 
 const contactSend = async (req, res) => {
     const msg = {
-        from: req.body.email,
-        to: 'dronteamsend@gmail.com',
-        subject: 'Support',
+        from: 'dronteamsend@gmail.com',
+        to: 'droneteamrecive@gmail.com',
+        subject: 'Drone Team Support Ticket',
         text: 'Plain text body of your email',
         html: `<p>${req.body.content}</p>`,
     };
