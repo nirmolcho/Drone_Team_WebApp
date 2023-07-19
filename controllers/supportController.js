@@ -11,8 +11,8 @@ const supportView = async (req, res) => {
 
 const contactSend = async (req, res) => {
     const msg = {
-        from: req.body.email,
-        to: 'dronteamsend@gmail.com',
+        from: 'dronteamsend@gmail.com',
+        to: 'droneteamrecive@gmail.com',
         subject: 'Support',
         text: 'Plain text body of your email',
         html: `<p>${req.body.content}</p>`,
