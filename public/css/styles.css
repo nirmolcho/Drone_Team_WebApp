@@ -4220,6 +4220,7 @@ textarea.form-control-lg {
 
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
+  color: black;
 }
 
 .card-subtitle {
