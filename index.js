@@ -81,6 +81,6 @@ app.delete("/file/:filename", async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 5005;
+const PORT = process.env.PORT || 5555;
 
 app.listen(PORT, () => console.log(`🏎  DRONE Server up and running at ${PORT}`));

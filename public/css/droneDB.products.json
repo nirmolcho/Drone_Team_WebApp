@@ -1,0 +1,221 @@
+[{
+  "_id": {
+    "$oid": "64a7c7e7b06780128c1d01aa"
+  },
+  "name": "dji mini",
+  "detail": "1-1011",
+  "stock": 7,
+  "price": 999,
+  "productImg": "http://localhost:5555/file/1688717281189-product-1-1011-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:08:07.221Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:06:52.517Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7c88eb06780128c1d01b0"
+  },
+  "name": "dji mavic air 2",
+  "detail": "1-1012",
+  "stock": 8,
+  "price": 999,
+  "productImg": "http://localhost:5555/file/1688717452558-product-1-1012-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:10:54.046Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T10:48:10.113Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7c905b06780128c1d01be"
+  },
+  "name": "dji phantom",
+  "detail": "1-1014",
+  "stock": 8,
+  "price": 1599,
+  "productImg": "http://localhost:5555/file/1688717571529-product-1-1014-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:12:53.084Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T10:53:19.422Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7c92bb06780128c1d01c6"
+  },
+  "name": "dji avata 2023",
+  "detail": "1-1015",
+  "stock": 6,
+  "price": 1428,
+  "productImg": "http://localhost:5555/file/1688717610227-product-1-1015-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:13:31.323Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T10:53:22.542Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7c954b06780128c1d01cc"
+  },
+  "name": "dji inspire",
+  "detail": "1-1016",
+  "stock": 8,
+  "price": 16499,
+  "productImg": "http://localhost:5555/file/1688717652058-product-1-1016-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:14:12.828Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T10:49:09.093Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7ca04b06780128c1d01d8"
+  },
+  "name": "autel EVO lite",
+  "detail": "1-1018",
+  "stock": 8,
+  "price": 877,
+  "productImg": "http://localhost:5555/file/1688717827202-product-1-1018-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:17:08.249Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:06:24.682Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7ca2eb06780128c1d01de"
+  },
+  "name": "oem bt-58",
+  "detail": "1-1019",
+  "stock": 83,
+  "price": 25,
+  "productImg": "http://localhost:5555/file/1688717869374-product-1-1019-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:17:50.248Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:46:37.943Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7ca5ab06780128c1d01e4"
+  },
+  "name": "oem bt-3380",
+  "detail": "1-1020",
+  "stock": 73,
+  "price": 15,
+  "productImg": "http://localhost:5555/file/1688717913706-product-1-1020-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:18:34.798Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:46:11.552Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7ca82b06780128c1d01ea"
+  },
+  "name": "parrot anafi",
+  "detail": "1-1021",
+  "stock": 10,
+  "price": 7499,
+  "productImg": "http://localhost:5555/file/1688717952813-product-1-1021-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:19:14.140Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-07T08:19:14.140Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7cab4b06780128c1d01f0"
+  },
+  "name": "swellpro 4",
+  "detail": "1-1022",
+  "stock": 8,
+  "price": 2099,
+  "productImg": "http://localhost:5555/file/1688718004033-product-1-1022-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:20:04.796Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-07T08:25:57.289Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7caeab06780128c1d01f6"
+  },
+  "name": "yuneec h3",
+  "detail": "1-1023",
+  "stock": 8,
+  "price": 2099,
+  "productImg": "http://localhost:5555/file/1688718057627-product-1-1023-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:20:58.707Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:06:47.279Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7cb15b06780128c1d01fc"
+  },
+  "name": "cinelog35",
+  "detail": "1-1024",
+  "stock": 8,
+  "price": 659,
+  "productImg": "http://localhost:5555/file/1688718100936-product-1-1024-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:21:41.726Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T10:47:25.502Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7cb3bb06780128c1d0202"
+  },
+  "name": "mobula6",
+  "detail": "1-1025",
+  "stock": 97,
+  "price": 129,
+  "productImg": "http://localhost:5555/file/1688718138320-product-1-1025-m.jpg",
+  "createdAt": {
+    "$date": "2023-07-07T08:22:19.122Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:45:43.416Z"
+  },
+  "__v": 0
+}]

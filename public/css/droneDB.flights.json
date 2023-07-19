@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "64a7cd25b06780128c1d02e1"
+  },
+  "date": {
+    "$date": "2000-07-07T00:00:00.000Z"
+  },
+  "item": "autel EVO lite",
+  "duration": 10,
+  "location": "Tel Aviv-Yafo, Israel",
+  "comment": "test 1",
+  "user": {
+    "$oid": "64a7c18db06780128c1d0177"
+  },
+  "createdAt": {
+    "$date": "2023-07-07T08:30:29.678Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-07T08:30:29.678Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7cd3fb06780128c1d02e7"
+  },
+  "date": {
+    "$date": "2023-07-08T00:00:00.000Z"
+  },
+  "item": "dji mavic air 2",
+  "duration": 20,
+  "location": "Belgium",
+  "comment": "test",
+  "user": {
+    "$oid": "64a7c18db06780128c1d0177"
+  },
+  "createdAt": {
+    "$date": "2023-07-07T08:30:55.353Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-07T08:30:55.353Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7cd60b06780128c1d02f3"
+  },
+  "date": {
+    "$date": "2023-07-07T00:00:00.000Z"
+  },
+  "item": "dji avata 2023",
+  "duration": 20,
+  "location": "Tel Aviv-Yafo, Israel",
+  "comment": "test 1",
+  "user": {
+    "$oid": "64a7c1a7b06780128c1d017a"
+  },
+  "createdAt": {
+    "$date": "2023-07-07T08:31:28.478Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-07T08:31:28.478Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64a7cd76b06780128c1d02f9"
+  },
+  "date": {
+    "$date": "2023-07-08T00:00:00.000Z"
+  },
+  "item": "oem bt-3380",
+  "duration": 30,
+  "location": "Herzliya, Israel",
+  "comment": "test 2",
+  "user": {
+    "$oid": "64a7c1a7b06780128c1d017a"
+  },
+  "createdAt": {
+    "$date": "2023-07-07T08:31:50.945Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-07T08:31:50.945Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6dd2475561b7fe316f88d"
+  },
+  "date": {
+    "$date": "2023-07-18T00:00:00.000Z"
+  },
+  "item": "dji mini",
+  "duration": 3,
+  "location": "Israelis St, Tel Aviv-Yafo, Israel",
+  "comment": "Nice flight, windy conditions, 3 hours total, enjoyed",
+  "user": {
+    "$oid": "64b6dcec75561b7fe316f86a"
+  },
+  "createdAt": {
+    "$date": "2023-07-18T18:42:44.519Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T18:42:44.519Z"
+  },
+  "__v": 0
+}]
