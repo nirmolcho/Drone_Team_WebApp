@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "64a7c18db06780128c1d0177"
+  },
+  "firstName": "user 1",
+  "lastName": "1",
+  "email": "user@user.com",
+  "password": "$2b$10$JYtHK/yUdZbCuVzLqsZDyObrT0.B15pGfi4ynGIetqm55AyapCoCW",
+  "role": "user",
+  "createdAt": {
+    "$date": "2023-07-07T07:41:01.412Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:45:17.655Z"
+  },
+  "__v": 0,
+  "lastLogin": {
+    "$date": "2023-07-19T11:45:17.655Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64a7c1a7b06780128c1d017a"
+  },
+  "firstName": "user 2",
+  "lastName": "2",
+  "email": "user2@user.com",
+  "password": "$2b$10$u.NEKDmOkiCefi9Li/qba.b3qRrZpp0nyLuSTxdTMqEKoD7zxrRB6",
+  "role": "user",
+  "createdAt": {
+    "$date": "2023-07-07T07:41:27.003Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:46:00.224Z"
+  },
+  "__v": 0,
+  "lastLogin": {
+    "$date": "2023-07-19T11:46:00.224Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64a7c1c0b06780128c1d017d"
+  },
+  "firstName": "user 3",
+  "lastName": "3",
+  "email": "user3@user.com",
+  "password": "$2b$10$VbCrI/O6nhaZ/.ZXTiDd.OeLNvWPtoOTjZjibvih5EQk7IbTruKgy",
+  "role": "user",
+  "createdAt": {
+    "$date": "2023-07-07T07:41:52.064Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:46:28.761Z"
+  },
+  "__v": 0,
+  "lastLogin": {
+    "$date": "2023-07-19T11:46:28.760Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64a7c2a7b06780128c1d0191"
+  },
+  "firstName": "admin",
+  "lastName": "admin",
+  "email": "admin@admin.com",
+  "password": "$2b$10$W/i1SkNzdrLlDnkymWwEKO2FOCZVYzRdkfGN2EDiJy1hIMbFA.0nq",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2023-07-07T07:45:43.698Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:46:49.659Z"
+  },
+  "__v": 0,
+  "lastLogin": {
+    "$date": "2023-07-19T11:46:49.659Z"
+  }
+}]
