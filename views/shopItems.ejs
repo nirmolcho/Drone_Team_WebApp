@@ -1,4 +1,4 @@
-//v12
+//v13
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <% items.forEach(function(item) { %>
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-4 mb-4">
                     <a href="/shop/items/<%= item._id %>" style="font-size: 26px;text-decoration: none; color: #ffffff;">
                         <div class="drone-item">
                             <div class="row">
@@ -46,6 +46,7 @@
                 <% if (currentPage > 1) { %>
                     <a class="btn btn-primary btn-sm" href="?page=<%= currentPage - 1 %>">Previous</a>
                 <% } %>
+
 
                 <% if (currentPage < totalPages) { %>
                     <a class="btn btn-primary btn-sm" href="?page=<%= currentPage + 1 %>">Next</a>

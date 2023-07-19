@@ -13,15 +13,15 @@ const adminDashboard = async (req, res) => {
                 },
             },
             {
-              $sort: { createdAt: -1 }
+                $sort: { createdAt: -1 }
             },
             {
-              $group: {
-                _id: { user: "$users.firstName" },
-                count: { $sum: 1 },
-                quantity: { $sum: "$quantity" },
-                totalPrice: { $sum: "$totalPrice" },
-              }
+                $group: {
+                    _id: { user: "$users.firstName" },
+                    count: { $sum: 1 },
+                    quantity: { $sum: "$quantity" },
+                    totalPrice: { $sum: "$totalPrice" },
+                }
             }
         ]);
 
