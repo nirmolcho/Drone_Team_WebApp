@@ -1,0 +1,204 @@
+[{
+  "_id": {
+    "$oid": "64a7c7e1c41b5553c3264c2b"
+  },
+  "length": 24933,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:08:01.229Z"
+  },
+  "filename": "1688717281189-product-1-1011-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7c88cc41b5553c3264c2d"
+  },
+  "length": 25790,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:10:52.575Z"
+  },
+  "filename": "1688717452558-product-1-1012-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7c8bcc41b5553c3264c2f"
+  },
+  "length": 25894,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:11:40.014Z"
+  },
+  "filename": "1688717500004-product-1-1013-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7c903c41b5553c3264c31"
+  },
+  "length": 19112,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:12:51.540Z"
+  },
+  "filename": "1688717571529-product-1-1014-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7c92ac41b5553c3264c33"
+  },
+  "length": 33488,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:13:30.234Z"
+  },
+  "filename": "1688717610227-product-1-1015-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7c954c41b5553c3264c35"
+  },
+  "length": 25273,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:14:12.066Z"
+  },
+  "filename": "1688717652058-product-1-1016-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7ca03c41b5553c3264c37"
+  },
+  "length": 30018,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:17:07.210Z"
+  },
+  "filename": "1688717827202-product-1-1018-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7ca2dc41b5553c3264c39"
+  },
+  "length": 26923,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:17:49.381Z"
+  },
+  "filename": "1688717869374-product-1-1019-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7ca59c41b5553c3264c3b"
+  },
+  "length": 26404,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:18:33.714Z"
+  },
+  "filename": "1688717913706-product-1-1020-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7ca80c41b5553c3264c3d"
+  },
+  "length": 37224,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:19:12.826Z"
+  },
+  "filename": "1688717952813-product-1-1021-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7cab4c41b5553c3264c3f"
+  },
+  "length": 33130,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:20:04.046Z"
+  },
+  "filename": "1688718004033-product-1-1022-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7cae9c41b5553c3264c41"
+  },
+  "length": 34183,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:20:57.636Z"
+  },
+  "filename": "1688718057627-product-1-1023-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7cb14c41b5553c3264c43"
+  },
+  "length": 52327,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:21:40.964Z"
+  },
+  "filename": "1688718100936-product-1-1024-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64a7cb3ac41b5553c3264c45"
+  },
+  "length": 41810,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-07T08:22:18.324Z"
+  },
+  "filename": "1688718138320-product-1-1025-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64aecb77e480b1445cae4bf1"
+  },
+  "length": 24933,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-12T15:49:11.382Z"
+  },
+  "filename": "1689176951254-product-1-1011-m.jpg",
+  "contentType": "image/jpeg"
+},
+{
+  "_id": {
+    "$oid": "64b6cee76ead9ddddead12f2"
+  },
+  "length": 3802,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-18T17:41:59.507Z"
+  },
+  "filename": "1689702119424-product-cart.png",
+  "contentType": "image/png"
+},
+{
+  "_id": {
+    "$oid": "64b6cfd8d0ea5379c222bf47"
+  },
+  "length": 186909,
+  "chunkSize": 261120,
+  "uploadDate": {
+    "$date": "2023-07-18T17:46:00.599Z"
+  },
+  "filename": "1689702360580-product-logo2.png",
+  "contentType": "image/png"
+}]

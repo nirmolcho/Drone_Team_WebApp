@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "64b7ccf024b1373fb7220aba"
+  },
+  "product": {
+    "$oid": "64a7ca5ab06780128c1d01e4"
+  },
+  "quantity": 4,
+  "totalPrice": 60,
+  "cart": {
+    "$oid": "64b7ccd924b1373fb7220a75"
+  },
+  "user": {
+    "$oid": "64a7c18db06780128c1d0177"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-07-16T11:45:52.768Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-16T11:45:52.768Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64b7ccf024b1373fb7220abb"
+  },
+  "product": {
+    "$oid": "64a7ca2eb06780128c1d01de"
+  },
+  "quantity": 4,
+  "totalPrice": 100,
+  "cart": {
+    "$oid": "64b7cce124b1373fb7220a8f"
+  },
+  "user": {
+    "$oid": "64a7c18db06780128c1d0177"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-07-16T11:45:52.768Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-16T11:45:52.768Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64b7ccf024b1373fb7220abc"
+  },
+  "product": {
+    "$oid": "64a7cb3bb06780128c1d0202"
+  },
+  "quantity": 1,
+  "totalPrice": 129,
+  "cart": {
+    "$oid": "64b7cce724b1373fb7220aad"
+  },
+  "user": {
+    "$oid": "64a7c18db06780128c1d0177"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-07-17T11:45:52.769Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T11:45:52.769Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64b7cd0e24b1373fb7220aeb"
+  },
+  "product": {
+    "$oid": "64a7ca5ab06780128c1d01e4"
+  },
+  "quantity": 7,
+  "totalPrice": 105,
+  "cart": {
+    "$oid": "64b7cd0324b1373fb7220adc"
+  },
+  "user": {
+    "$oid": "64a7c1a7b06780128c1d017a"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-07-18T11:46:22.122Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T11:46:22.122Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "64b7cd2624b1373fb7220b13"
+  },
+  "product": {
+    "$oid": "64a7ca2eb06780128c1d01de"
+  },
+  "quantity": 9,
+  "totalPrice": 225,
+  "cart": {
+    "$oid": "64b7cd1d24b1373fb7220b09"
+  },
+  "user": {
+    "$oid": "64a7c1c0b06780128c1d017d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-07-19T11:46:46.029Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-19T11:46:46.029Z"
+  }
+}]
