@@ -2,9 +2,9 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API);
 
 const supportView = async (req, res) => {
-
+    
     res.render('support', {
-
+    
         status: ''
     });
 }

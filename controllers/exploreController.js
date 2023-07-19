@@ -11,7 +11,7 @@ const exploreView = async (req, res) => {
         const response = await axios(ipOptions);
         const myLocation = response.data;
     
-        let location = "Tel Aviv, Israel";
+        let location = "Rishon Lezion, Israel";
 
         var config = {
             method: 'GET',
