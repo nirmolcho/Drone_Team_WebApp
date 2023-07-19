@@ -202,7 +202,7 @@
     }
 
     // Line Chart
-    let sales = JSON.parse('<%- JSON.stringify(sales) %>');
+    let sales = JSON.parse('{"dates": ["2023-07-01", "2023-07-02", "2023-07-03"], "sales": [10, 20, 15]}');
     console.log('Sales:', sales);  // For debugging
     console.log('Dates:', sales.dates);  // For debugging
     console.log('Sales Data:', sales.sales);  // For debugging
