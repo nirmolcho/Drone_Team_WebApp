@@ -73,6 +73,7 @@
                 orient: 'horizontal',
                 x: 'right',
                 data: ['Orders', 'Quantity', 'Total Price']
+
             },
             grid: {
                 left: '8px',
@@ -91,7 +92,7 @@
                     alignWithLabel: true
                 },
                 splitLine: {
-                    show: false
+                    show: true
                 },
                 axisLine: {
                     show: true
@@ -169,16 +170,16 @@
             }, 500);
         });
     }
-    // Pie Chart
-    let pieChartElem = document.getElementById('echartPie');
-    if (pieChartElem) {
-        let pieChart = echarts.init(pieChartElem, {renderer: 'canvas'});
+    const pieChartElement = document.getElementById('echartPie');
+
+    if (pieChartElement) {
+        const pieChart = echarts.init(pieChartElement, { renderer: 'canvas' });
         pieChart.setOption({
             backgroundColor: 'transparent',
             legend: {
                 orient: 'vertical',
                 x: 'left',
-                data: ['Orders', 'Quantity', 'Total Price']
+                data: ['Orders', 'Quantity', 'Total Price'],
             },
             series: [
                 {
@@ -186,19 +187,20 @@
                     type: 'pie',
                     radius: '70%',
                     data: [
-                        {value: statistics.countData, name: 'Orders'},
-                        {value: statistics.quantityData, name: 'Quantity'},
-                        {value: statistics.totalPriceData, name: 'Total Price'},
-                    ]
-                }
-            ]
+                        { value: statistics.countData, name: 'Orders' },
+                        { value: statistics.quantityData, name: 'Quantity' },
+                        { value: statistics.totalPriceData, name: 'Total Price' },
+                    ],
+                },
+            ],
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', () => {
             setTimeout(() => {
                 pieChart.resize();
             }, 500);
         });
     }
+
     // Line Chart
     let sales = JSON.parse('<%- JSON.stringify(sales) %>');
     console.log('Sales:', sales);  // For debugging
